@@ -1,0 +1,46 @@
+<div class="supreme" id="supreme">
+<div class="containerX">    
+            <!--FORM-->
+            <form action="/add" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Inserte su nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input name="city" class="form-control" placeholder="Inserte ciudad de origen">
+                </div>
+                <button class="btn-submit">Agregar</button>
+            </form>
+        <!--List; Hsaremos una tabla--> 
+</div>
+
+<div class="container" >
+    <h3>Hackademy Panas</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Nombre</th>
+                <th>Ciudad</th>                        
+                <th>Operaciones</th>                        
+            </tr>
+        </thead>
+        <tbody>
+            <!--Aplicamos sintaxis EJS para traer el array de las colecciones
+            a la tabla HTML-->
+            <% for(var i=0;i < personas.length;i++){ %>
+            <tr>
+                <!--No olvidar usar el signo "="-->
+                <td><%=i+1%></td>
+                <td><%= personas[i].name%></td>
+                <td><%= personas[i].city%></td>
+                <td>
+                   <a href="/delete/<%= personas[i]._id %>" class="btn-danger">Delete</a>
+                   <a href="/update/<%= personas[i]._id %>" class="btn-update">Update</a>
+                </td>
+            </tr>
+            <%}%>
+        </tbody>                 
+    </table>
+</div>    
+
+</div>
