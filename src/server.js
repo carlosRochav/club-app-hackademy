@@ -12,8 +12,12 @@ app.use('/css',express.static(__dirname+'public/css'));
 //<-
 
 
-//Ahora nos conectamos a la base de datos
-mongoose.connect('mongodb://localhost/crud-hackademy')//Creamos la base de datos
+// //Ahora nos conectamos a la base de datos
+// mongoose.connect('mongodb://localhost/crud-hackademy')//Creamos la base de datos
+//     .then(db=>console.log("Conexion exitosa"))//Promesa que envia el mensaje que se realizo la conexion
+//     .catch(err=>console.log(err))//En caso contrario madna el error
+
+    mongoose.connect('mongodb+srv://carlosRochav:lostdesert1989@clusterx.yxlnv.mongodb.net/crud-hackademy?retryWrites=true&w=majority')//Creamos la base de datos
     .then(db=>console.log("Conexion exitosa"))//Promesa que envia el mensaje que se realizo la conexion
     .catch(err=>console.log(err))//En caso contrario madna el error
 
