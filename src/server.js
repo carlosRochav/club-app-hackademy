@@ -17,7 +17,7 @@ app.use('/css',express.static(__dirname+'public/css'));
 //     .then(db=>console.log("Conexion exitosa"))//Promesa que envia el mensaje que se realizo la conexion
 //     .catch(err=>console.log(err))//En caso contrario madna el error
 
-    mongoose.connect('')//Creamos la base de datos
+    mongoose.connect('mongodb+srv://carlosRochav:lostdesert1989@clusterx.yxlnv.mongodb.net/crud-hackademyX?retryWrites=true&w=majority')//Creamos la base de datos
     .then(db=>console.log("Conexion exitosa"))//Promesa que envia el mensaje que se realizo la conexion
     .catch(err=>console.log(err))//En caso contrario madna el error
 
